@@ -1,16 +1,14 @@
-FROM alpine:3
+FROM google/cloud-sdk:322.0.0-alpine
 
-ARG VCS_REF
-ARG BUILD_DATE
-ARG KUBE_VERSION
-ARG HELM_VERSION
+ARG VCS_REF=aioniclabs/helm-kubectl
+ARG KUBE_VERSION=1.18.12
+ARG HELM_VERSION=3.5.1
 
 # Metadata
 LABEL org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.name="helm-kubectl" \
-      org.label-schema.url="https://hub.docker.com/r/dtzar/helm-kubectl/" \
-      org.label-schema.vcs-url="https://github.com/dtzar/helm-kubectl" \
-      org.label-schema.build-date=$BUILD_DATE
+      org.label-schema.url="https://hub.docker.com/r/aioniclabs/helm-kubectl/" \
+      org.label-schema.vcs-url="https://github.com/aioniclabs/helm-kubectl"
 
 RUN apk add --no-cache ca-certificates bash git openssh curl jq bind-tools \
     && wget -q https://storage.googleapis.com/kubernetes-release/release/v${KUBE_VERSION}/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl \
