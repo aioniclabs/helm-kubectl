@@ -1,7 +1,7 @@
 default: docker_build
 
-DOCKER_IMAGE ?= dtzar/helm-kubectl
-DOCKER_TAG ?= `git rev-parse --abbrev-ref HEAD`
+DOCKER_IMAGE ?= aioniclabs/helm-kubectl
+DOCKER_TAG ?= `0.0.13`
 VCS_REF ?= `git rev-parse --short HEAD`
 BUILD_DATE ?= `date -u +"%Y-%m-%dT%H:%M:%SZ"`
 
@@ -11,7 +11,7 @@ KUBE_VERSION = "1.20.4"
 
 # Note: Latest version of helm may be found at
 # https://github.com/kubernetes/helm/releases
-HELM_VERSION = "3.5.3"
+HELM_VERSION = "3.6.2"
 
 docker_build:
 	@docker build \

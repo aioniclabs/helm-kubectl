@@ -2,7 +2,7 @@ FROM google/cloud-sdk:322.0.0-alpine
 
 ARG VCS_REF=aioniclabs/helm-kubectl
 ARG KUBE_VERSION=1.18.12
-ARG HELM_VERSION=3.5.1
+ARG HELM_VERSION=3.6.2
 ARG DOCKER_VERSION=docker-20.10.5.tgz
 
 
